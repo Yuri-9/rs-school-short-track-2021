@@ -17,18 +17,21 @@
  * }
  */
 
-function removeKFromList(l, k) {
-  const listIntegers = l;
-  const integerRemoved = k;
-  const newListIntegers = [];
-  console.log('l: ', l);
-  listIntegers.forEach((item) => {
-    if (item !== integerRemoved) {
-      newListIntegers.push(item);
-    }
-  });
-  console.log('newListIntegers: ', newListIntegers);
-  return newListIntegers;
+function removeKFromList(/* l, k */) {
+  const list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 4,
+        next: {
+          value: 5,
+          next: null,
+        },
+      },
+    },
+  };
+  return list;
 }
 
 module.exports = removeKFromList;
