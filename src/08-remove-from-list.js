@@ -17,20 +17,21 @@
  * }
  */
 
-function removeKFromList(/* l, k */) {
-  const list = {
-    value: 1,
-    next: {
-      value: 2,
-      next: {
-        value: 4,
-        next: {
-          value: 5,
-          next: null,
-        },
-      },
-    },
-  };
+function removeKFromList(l, k) {
+  let list = l;
+  if (list.value === k) {
+    list = list.next;
+  }
+  let thisNode = list;
+  let nextNode = thisNode.next;
+  while (nextNode != null) {
+    if (nextNode.value === k) {
+      thisNode.next = nextNode.next;
+      if (thisNode.next == null) break;
+    }
+    thisNode = thisNode.next;
+    nextNode = thisNode.next;
+  }
   return list;
 }
 
