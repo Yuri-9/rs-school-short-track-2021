@@ -10,17 +10,30 @@
  * stack.pop(); // undefined
  *
  */
+
 class Stack {
-  push(/* element */) {
-    throw new Error('Not implemented');
+  push(element) {
+    const node = {
+      value: element,
+      next: null,
+    };
+
+    if (this.top) {
+      node.next = this.top;
+      this.top = node;
+    } else {
+      this.top = node;
+    }
   }
 
   pop() {
-    throw new Error('Not implemented');
+    const current = this.top;
+    this.top = this.top.next;
+    return current.value;
   }
 
   peek() {
-    throw new Error('Not implemented');
+    return this.top.value;
   }
 }
 
